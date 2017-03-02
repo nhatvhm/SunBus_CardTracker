@@ -1,0 +1,9 @@
+{
+  "name": "sun-bus_card-tracker",
+  "version": "0.0.0",
+  "description": "SunBus_CardTracker",
+  "main": "app.js",
+  "author": {
+    "name": "user"
+  }
+}
