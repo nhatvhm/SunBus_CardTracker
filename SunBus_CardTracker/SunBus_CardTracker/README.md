@@ -1,3 +1,0 @@
-﻿# SunBus_CardTracker
-
-

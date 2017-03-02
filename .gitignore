@@ -241,3 +241,4 @@ ModelManifest.xml
 # FAKE - F# Make
 .fake/
 /SunBus_CardTracker/SunBus_CardTracker/typings
+/SunBus_CardTracker/typings
