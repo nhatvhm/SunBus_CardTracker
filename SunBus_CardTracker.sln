@@ -7,6 +7,8 @@ Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "SunBus_CardTracker", "SunBu
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "CardReaderClient", "CardReaderClient\CardReaderClient.pyproj", "{04E15CDE-377A-4A6D-96DE-3199BE026DE9}"
 EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "CardReaderServer", "CardReaderServer\CardReaderServer.njsproj", "{EB0FC70C-EB8F-43C3-BDC1-239117852327}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{701F458F-1D1F-449D-A34E-AD17DB63B50B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{04E15CDE-377A-4A6D-96DE-3199BE026DE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{04E15CDE-377A-4A6D-96DE-3199BE026DE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB0FC70C-EB8F-43C3-BDC1-239117852327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB0FC70C-EB8F-43C3-BDC1-239117852327}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB0FC70C-EB8F-43C3-BDC1-239117852327}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB0FC70C-EB8F-43C3-BDC1-239117852327}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

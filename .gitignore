@@ -244,3 +244,4 @@ ModelManifest.xml
 /SunBus_CardTracker/typings
 /SunBus_CardTracker/mess
 /CardReaderClient/packet_sniff
+/CardReaderServer/typings
