@@ -1,0 +1,9 @@
+{
+  "name": "card-reader-server",
+  "version": "0.0.0",
+  "description": "CardReaderServer",
+  "main": "app.js",
+  "author": {
+    "name": "user"
+  }
+}

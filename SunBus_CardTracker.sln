@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "SunBus_CardTracker", "SunBus_CardTracker\SunBus_CardTracker.njsproj", "{701F458F-1D1F-449D-A34E-AD17DB63B50B}"
-EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "CardReaderClient", "CardReaderClient\CardReaderClient.pyproj", "{04E15CDE-377A-4A6D-96DE-3199BE026DE9}"
 EndProject
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "CardReaderServer", "CardReaderServer\CardReaderServer.njsproj", "{EB0FC70C-EB8F-43C3-BDC1-239117852327}"
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "CardReaderServer_ng1", "CardReaderServer_ng1\CardReaderServer_ng1.njsproj", "{D3F203E4-2976-4C5E-8F53-CA43D9447C0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,16 +13,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{701F458F-1D1F-449D-A34E-AD17DB63B50B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{701F458F-1D1F-449D-A34E-AD17DB63B50B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{701F458F-1D1F-449D-A34E-AD17DB63B50B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{701F458F-1D1F-449D-A34E-AD17DB63B50B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{04E15CDE-377A-4A6D-96DE-3199BE026DE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{04E15CDE-377A-4A6D-96DE-3199BE026DE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EB0FC70C-EB8F-43C3-BDC1-239117852327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EB0FC70C-EB8F-43C3-BDC1-239117852327}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EB0FC70C-EB8F-43C3-BDC1-239117852327}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EB0FC70C-EB8F-43C3-BDC1-239117852327}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3F203E4-2976-4C5E-8F53-CA43D9447C0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3F203E4-2976-4C5E-8F53-CA43D9447C0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3F203E4-2976-4C5E-8F53-CA43D9447C0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3F203E4-2976-4C5E-8F53-CA43D9447C0A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

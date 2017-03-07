@@ -1,11 +1,11 @@
 {
-  "name": "card-reader-server",
+  "name": "card-reader-server_ng1",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
   },
-  "description": "CardReaderServer",
+  "description": "CardReaderServer_ng1",
   "author": {
     "name": "user"
   },
