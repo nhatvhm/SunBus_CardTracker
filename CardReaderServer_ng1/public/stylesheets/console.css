@@ -1,0 +1,525 @@
+/* Dynamic font size depends on screen resolution */
+/* Make sure all font size is defined in em */
+html {
+    font-size: 62.5%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    font-size: 1em;
+}
+
+@media (max-width: 920px) {
+    html {
+        font-size: 70%;
+    }
+}
+
+@media (min-width: 920px) {
+    html {
+        font-size: 80%;
+    }
+}
+
+@media (min-width: 1260px) {
+    html {
+        font-size: 87.5%;
+    }
+}
+
+@media (min-width: 1880px) {
+    html {
+        font-size: 125%;
+    }
+}
+
+/* Should be set by Kendo but not effective - define explictly */
+.k-grid td {
+    text-align: center;
+    font-size: 1em;
+    /* color: #333333; */
+    /* border-bottom: 1px solid black; */
+    border-width: 0;
+}
+
+.k-grid .k-button {
+    font-size: 1em;
+}
+
+.k-header .k-button {
+    font-size: 0.8em;
+}
+
+.k-grid-pager .k-button {
+    font-size: 0.8em;
+}
+
+.k-grid-toolbar {
+    padding: 0.25em;
+}
+
+.k-grid tr td {
+    /* border-bottom: 1px solid black; */
+    border-width: 0;
+}
+
+.container {
+    position: relative;
+    /* top right bottom left */
+    padding: 0 0 0 10%;
+    /* padding: 0 0 0 160px; */
+    background: #ffffff;
+}
+
+#KendoWindow_about {
+    text-align: center;
+    font-size: 1.25em;
+}
+
+#kendo_menu {
+    height: 10%;
+    background: #888888;
+    /* border: 1px solid #000; */
+    /* margin: 5px 5px 5px 5px; */
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+}
+
+#menu_head_text {
+    font-size: 1.25em;
+    font-weight: bold;
+    color: white;
+}
+
+#sidebar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    /* width: 160px; */
+    width: 10%;
+    /* border: 1px solid #000; */
+    background: #ebebeb;
+    font-size: 0.9em;
+    /* overflow: scroll; */
+}
+
+.Sidebar_text {
+    margin-top: 0.1em;
+}
+
+#KendoTreeView_Side {
+    padding-top: 5%;
+}
+
+#header {
+    height: 10%;
+    background: #888888;
+    /*overflow: scroll;*/
+    display: flex;
+    justify-content: space-between; /* align horizontal */
+    align-items: center; /* align vertical */
+}
+
+#header_section1 {
+    height: 99%; 
+    margin: 4px;
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+}
+
+#header_img {
+    height: 90%;
+    width: auto;
+}
+
+#header_text {
+    font-size: 2em;
+    color: white;
+    font-weight: bold;
+    margin-left: 1em;
+}
+
+.side-button {
+    padding-top: 0.25em;
+    font-size: 1em !important;
+    font-weight: bold;
+    width: 6em;
+    height: 100%;
+}
+
+#content {
+    height: 90%;
+    /* border: 1px solid #000; */
+    /* margin: 5px 5px 5px 5px; */
+    overflow: auto;
+}
+
+#footer {
+    background: #ebebeb;
+    /* border: 1px solid #000; */
+    height: 0;
+    /* margin: 5px 5px 5px 5px; */
+}
+
+#assetGrid_tab {
+    /* font-size: 16px; */
+}
+
+#applGrid_tab {
+    /* font-size: 16px; */
+}
+
+#addZone_tab {
+    /* font-size: 16px; */
+}
+
+.applGridContainer h4 {
+    /* font-size: 24px; */
+    margin-left: 1em;
+}
+
+.applGrid_tabContent {
+    height: auto;
+    /* max-height: 100%; */
+    /* overflow: scroll; */
+}
+
+.applGridDetailContainer {
+    display: inline-block;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    /* float: left; */
+}
+
+    .applGridDetailContainer button {
+        /* IMG from: http://www.iconsdb.com/gray-icons/power-icon.html */
+        height: 160px;
+        width: 160px;
+    }
+
+    .applGridDetailContainer .k-primary {
+        background-color: #4cff00;
+        border-color: #787878;
+    }
+
+        .applGridDetailContainer .k-primary:hover {
+            background-color: #7ea700;
+            border-color: #787878;
+        }
+
+.button_container {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin: 1em;
+    text-align: center;
+}
+
+.k-treeview .k-in {
+    padding: 5px;
+}
+
+.k-edit-form-container {
+    width: auto;
+}
+
+.editForm_fullWidth {
+    display: inline-block;
+    width: 90%;
+    float: left;
+    /* font-size: 20px; */
+}
+
+    .editForm_fullWidth h4 {
+        /* font-size: 24px; */
+    }
+
+    .editForm_fullWidth .k-textbox {
+        width: 35%;
+        min-width: 15em;
+    }
+
+    .editForm_fullWidth ul {
+        list-style-type: none;
+        margin-left: 0;
+    }
+
+        .editForm_fullWidth ul li {
+            /* Remove this or Kendo Grid will have broken display */
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+        }
+
+            .editForm_fullWidth ul li.accept {
+                margin-left: 11em;
+            }
+
+    .editForm_fullWidth .label {
+        display: inline-block;
+        width: 15%;
+        min-width: 10em;
+        text-align: left;
+    }
+
+        .editForm_fullWidth .label.required:before {
+            content: "*";
+            font-weight: bold;
+            color: red;
+        }
+
+.editForm_halfWidth_L {
+    display: inline-block;
+    width: 70%;
+    float: left;
+    /* font-size: 16px; */
+}
+
+    .editForm_halfWidth_L ul {
+        list-style-type: none;
+    }
+
+        .editForm_halfWidth_L ul li {
+            margin: 0.5em;
+        }
+
+            .editForm_halfWidth_L ul li.accept {
+                margin-left: 11em;
+            }
+
+    .editForm_halfWidth_L .label {
+        display: inline-block;
+        width: 10em;
+        text-align: left;
+    }
+
+        .editForm_halfWidth_L .label.required:before {
+            content: "*";
+            font-weight: bold;
+            color: red;
+        }
+
+.editForm_halfWidth_R {
+    display: inline-block;
+    width: 30%;
+    float: right;
+    /* font-size: 16px; */
+    background-color: #ebebeb;
+}
+
+    .editForm_halfWidth_R h4 {
+        margin-left: 1.5em;
+        /* font-size: 24px; */
+    }
+
+    .editForm_halfWidth_R a {
+        margin: 5px 5px 5px 5px;
+    }
+
+    .editForm_halfWidth_R ul {
+        list-style-type: none;
+        padding-left: 2em;
+        padding-right: 40px;
+    }
+
+        .editForm_halfWidth_R ul li {
+            /* Remove this or Kendo Grid will have broken display */
+            /* margin: 0.5em; */
+        }
+
+            .editForm_halfWidth_R ul li.accept {
+                margin-right: 11em;
+            }
+
+    .editForm_halfWidth_R .label {
+        display: inline-block;
+        width: 10em;
+        text-align: left;
+    }
+
+        .editForm_halfWidth_R .label.required:before {
+            content: "*";
+            font-weight: bold;
+            color: red;
+        }
+
+.mqtt_status_err {
+    margin: 20px 20px 20px 20px;
+    font-weight: bold;
+    color: red;
+}
+
+.mqtt_status_ok {
+    margin: 20px 20px 20px 20px;
+    font-weight: bold;
+    color: green;
+}
+
+#UserTypeDropDownList .k-list-container {
+    /* need min-width for default */
+    min-width: 170px !important;
+    width: 90% !important;
+}
+
+#UserTypeDropDownList .k-list {
+    width: 90% !important;
+}
+
+.invalid-slot {
+    background: #787878 !important;
+    cursor: no-drop;
+}
+
+.holiday-slot {
+    background: #e5f5fa !important;
+}
+
+
+.gauges-container {
+    text-align: center;
+    /* font-size: 20px; */
+}
+
+    .gauges-container td {
+        width: 420px;
+    }
+
+.temp-gauge-container {
+    text-align: center;
+    margin: 0 auto 0 auto;
+    background: transparent url("/resources/img/linear-gauge-container.png") no-repeat 50% 50%;
+    background-size: 144px 400px;
+    padding: 27px;
+    width: 300px;
+    height: 360px;
+}
+
+.temp-gauge {
+    height: 360px;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    margin: 0 auto;
+}
+
+.humid-gauge-container {
+    margin: 0 auto 0 auto; /*Check temp-gauge's actual height*/
+    background: transparent url("/resources/img/gauge-container.png") no-repeat 50% 50%;
+    background-size: 360px 360px;
+    padding: 4px;
+    width: 406px;
+    height: 406px;
+    text-align: center;
+}
+
+.humid-gauge {
+    display: inline-block;
+    *display: inline;
+    width: 324px;
+    height: 324px;
+    margin: 0 auto;
+}
+
+.assetGridPhotoImgMini img {
+    max-width: 64px;
+    max-height: 48px;
+    width: auto;
+    height: auto;
+}
+
+.cateMainGridLink {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Kept for potential use */
+.map_container {
+    width: 75%;
+    height: 97%;
+    display: block;
+    float: left;
+    /* font-size: 16px; */
+}
+
+.map_status_container {
+    width: 25%;
+    height: 97%;
+    display: block;
+    float: right;
+    background: #ebebeb;
+    /* font-size: 16px; */
+    word-break: keep-all;
+}
+
+.map_nav_container {
+    background: #ebebeb;
+}
+
+.map_nav_bar {
+    font-size: 0.75em;
+}
+
+    .map_nav_bar td {
+        margin: 8px;
+    }
+
+.map_nav_bar_toggle {
+    width: 100%;
+    height: 3%;
+    font-size: 0.75em;
+    text-align: center;
+    background: #428bca;
+}
+
+.triangle_pointer {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 32px 8px 0 8px;
+    border-color: #007bff transparent transparent transparent;
+}
+
+.kml_map_info {
+    margin: 0.5em 0 0 0.5em;
+    font-size: 0.8em;
+}
+
+.kml_map_info ul { 
+    margin: 0; 
+    padding: 0.5em; 
+}
+
+    .kml_map_info ul {
+        list-style-type: none;
+    }
+
+    .kml_map_info .kml_map_info_title {
+        display: inline-block;
+        width: 7.5em;
+        font-weight: bold;
+        /* background:#808080; */
+    }
+
+    .kml_map_info_statS {
+        display: inline-block;
+        width: 3.5em;
+        font-size: 1em;
+        text-align: center;
+    }
+
+    .kml_map_info_statL {
+        display: inline-block;
+        width: 12em;
+        font-size: 1.0em;
+        text-align: center;
+    }
+
+    .kml_map_info_statTable {
+        width: auto;
+        /* margin: 1em; */
+        border-collapse: collapse;
+        border: 2px solid #888888;
+    }

@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<!-- For demo purpose only. -->
+<html>
+<head>
+    <!-- Webpage title -->
+    <title>Minimal APC Test</title>
+    <!-- CSS link section -->
+    <link rel="stylesheet" href="/stylesheets/index.css" />
+    <!-- Script section (Libraries) -->
+    <script src="/scripts/jquery-3.1.1.min.js"></script>
+    <script src="/scripts/socket.io-1.7.2.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+    <!--<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>-->
+</head>
+<body>
+    <script>
+        var WS_CLIENT_LINK = "<%= WS_CLIENT_LINK %>"; //Server rendering by ejs
+        var UPPER_LIMIT = "<%= UPPER_LIMIT %>";
+        var RELOAD_TIME_AMOUNT = "<%= RELOAD_TIME_AMOUNT %>";
+        var WEATHER_TIME_AMOUNT = "<%= WEATHER_TIME_AMOUNT %>";
+        var SHOW_WEATHER_TAB = "<%= SHOW_WEATHER_TAB %>";
+        var SD_CARD_DOWN = "<%= SD_CARD_DOWN %>";
+    </script>
+    <script src="/scripts/index.js"></script>
+    <div>
+        <span>In: </span>
+        <textarea id="mic_serial_in" rows="8" cols="64"></textarea>
+    </div>
+    <div>
+        <button type="button" id="mic_serial_send" onclick="mic_serial_send()">Send</button>
+        <button type="button" id="mic_serial_clear" onclick="mic_serial_clear()">Clear</button>
+    </div>
+    <div>
+        <span>Out: </span><br>
+        <textarea id="mic_serial_out_hex" rows="8" cols="96" ></textarea>
+        <textarea id="mic_serial_out_str" rows="8" cols="48"></textarea>
+    </div>
+    <div>
+        <span id="sd_card_down">ERROR: SD_CARD_DOWN</span>
+        <span>Error Found: </span><span id="Error_Report">n/a</span>
+    </div>
+</body>
+</html>

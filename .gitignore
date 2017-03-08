@@ -245,3 +245,7 @@ ModelManifest.xml
 /SunBus_CardTracker/mess
 /CardReaderClient/packet_sniff
 /CardReaderServer/typings
+/CardReaderServer_ng1/public/libraries/KendoUI
+/CardReaderServer_ng1/public/libraries
+/CardReaderServer_ng1/data/login_sessions
+/CardReaderServer_ng1/public/images

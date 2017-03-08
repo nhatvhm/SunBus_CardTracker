@@ -1,0 +1,151 @@
+﻿<html>
+<head>
+    <!-- Wrote for David-->
+    <title>Web Console</title>
+    <!-- CSS Style section (Just simple mod for very basic readable UI) -->
+    <style>
+    </style>
+    <!-- CSS link section -->
+    <link rel="stylesheet" href="/public/libraries/KendoUI/styles/kendo.common-bootstrap.min.css" />
+    <link rel="stylesheet" href="/public/libraries/KendoUI/styles/kendo.bootstrap.min.css" />
+    <link rel="stylesheet" href="/public/libraries/KendoUI/styles/kendo.bootstrap.mobile.min.css" />
+    <link rel="stylesheet" href="/public/stylesheets/console.css" />
+    <!-- Script Library section (using AngularJS with jQuery and MQTT web socket, call API when retriving data) -->
+    <script src="/public/libraries/KendoUI/js/jquery.min.js"></script> <!-- v1.12.3 -->
+    <script src="/public/libraries/KendoUI/js/angular.min.js"></script> <!-- v1.4.6 -->
+    <script src="/public/libraries/KendoUI/js/kendo.all.min.js"></script>
+    <script src="/public/libraries/KendoUI/js/jszip.min.js"></script>
+    <script src="/public/libraries/KendoUI/js/cultures/kendo.culture.zh-HK.min.js"></script>
+    <script src="/public/libraries/KendoUI/js/messages/kendo.messages.zh-HK.min.js"></script>
+    <!-- Custom Scripts (Some in head section, some in body section) -->
+    <script src="/public/scripts/scope_controller.js"></script>
+    <script src="/public/scripts/global.js"></script>
+    <script src="/public/scripts/dummy.js"></script>
+    <script src="/public/scripts/check_login.js"></script>
+    <script src="/public/scripts/KendoGrid_User.js"></script>
+    <script src="/public/scripts/KendoGrid_BusStat.js"></script>
+    <script src="/public/scripts/KendoDropDownList_Bus.js"></script>
+    <script src="/public/scripts/KendoUpload_User.js"></script>
+    <script src="/public/scripts/KendoTreeView_Side.js"></script>
+    <script src="/public/scripts/KendoWindow_about.js"></script>
+    <script src="/public/scripts/KendoWindow_upload_User.js"></script>
+    <script src="/public/scripts/server_access.js"></script>
+    <script src="/public/scripts/file_upload.js"></script>
+    <script src="/public/scripts/CustomFilter_BusStat.js"></script>
+</head>
+<body ng-app="homeScript" ng-controller="ConsoleCtrl" id="Asset1Body">
+    <div class="container">
+        <div id="sidebar" ng-show="KendoTreeView_Side_show">
+
+            <div id="kendo_menu">
+                <div id="menu_head_text"> MENU </div>
+            </div>
+
+            <div kendo-tree-view="KendoTreeView_Side" id="KendoTreeView_Side"
+                 k-options="Options_KendoTreeView_Side"
+                 k-ng-delay="Options_KendoTreeView_Side.dataSource"
+                 k-on-change="OnChange_KendoTreeView_Side(dataItem)">
+            </div>
+
+            <div id="KendoWindow_about"
+                 kendo-window="KendoWindow_about"
+                 k-options="Options_KendoWindow_about">
+                <span>E Tag Passenger Counter Web Console v1.0</span>
+                <br />
+                <button kendo-button ng-click="KendoWindow_about.close()">OK</button>
+            </div>
+
+        </div>
+
+        <div id="header">
+            <div> <span>&nbsp;</span> </div>
+            <div id="header_section1">
+                <img id="header_img" src="/public/images/etag-logo.png" alt="Logo">
+                <span class="HeaderTitle" id="header_text"> E Tag Passenger Counter Web Console </span>
+            </div>
+            <div> <span>&nbsp;</span> </div>
+        </div>
+
+        <div id="content">
+            <div ng-show="Selected_KendoTreeView_Side=='User'">
+                <div kendo-grid="KendoGrid_User" id="KendoGrid_User"
+                     k-options="Options_KendoGrid_User(dataItem)"
+                     k-ng-delay="Options_KendoGrid_User(dataItem).dataSource">
+                </div>
+
+                <div id="KendoWindow_upload_User"
+                     kendo-window="KendoWindow_upload_User"
+                     k-options="Options_KendoWindow_upload_User">
+                    <input kendo-upload="KendoUpload_User" id="KendoUpload_User"
+                           k-options="Options_KendoUpload_User(dataItem, 102)"
+                           name="KendoUpload_User_field"
+                           type="file" /> <br>
+                    <br />
+                    <button kendo-button ng-click="KendoWindow_upload_User.close()">OK</button>
+                </div>
+
+            </div>
+
+            <div ng-show="Selected_KendoTreeView_Side=='BusStat'">
+                <div kendo-grid="KendoGrid_BusStat" id="KendoGrid_BusStat"
+                     k-options="Options_KendoGrid_BusStat(dataItem)"
+                     k-ng-delay="Options_KendoGrid_BusStat(dataItem).dataSource">
+                </div>
+            </div>
+        <div id="footer">
+        </div>
+
+        <script type="text/x-kendo-template" id="latlon_KendoGrid_BusStat">
+            <span class="cateMainGridLink" ng-click="fGotoLinkbyLatLon(dataItem)">{{dataItem.latitude.toFixed(6)}}, {{dataItem.longitude.toFixed(6)}}</span>
+        </script>
+
+        <script type="text/x-kendo-template" id="ItemTemplate_KendoTreeView_Side">
+            <div class="Sidebar_text">#= item.text #</div>
+        </script>
+        
+            <script type="text/x-kendo-template" id="toolbar_KendoGrid_User">
+                <div class="map_nav_bar">
+                    <div style="margin: 0 0.25em 0 0.25em; height:2.5em;">
+                        <div style="float: left;">
+                            <button kendo-button ng-click="KendoGrid_User_Upload();" style="margin-left: 0.5em">Upload</button>
+                            <button kendo-button ng-click="ExportToExcel_User()" style="margin-left:2em" ng-disabled="Enable_Export_Excel_User"><span class="k-icon k-i-excel" style="margin:1em"></span>Export to Excel</button>
+                        </div>
+                        <div style="float: right;">
+                            <button kendo-button ng-click="Logout()" class="side-button" ng-hide="KendoTreeView_Side_show">Logout</button>
+                        </div>
+                    </div>
+                </div>
+            </script>
+
+        <script type="text/x-kendo-template" id="toolbar_KendoGrid_BusStat">
+            <div class="map_nav_bar">
+                <input id ="KendoDropDownList_BusStat" class="k-textbox" placeholder=" MAC ( blank=all , split by ',' )" ng-model="KendoGrid_BusStat_MAC" style="width: 100%; margin-bottom: 0.25em" /> <br>
+                <div style="margin: 0 0.25em 0 0.25em; height:2.5em;">
+                    <div style="float: left;">
+                        <span style="margin-right: 0.5em"> Start: </span>
+                        <input kendo-date-picker id="KendoDatePicker_BusStat_Start" k-options="Options_KendoDatePicker_BusStat_Start" style="width: 9em" />
+                        <input kendo-time-picker id="KendoTimePicker_BusStat_Start" k-options="Options_KendoTimePicker_BusStat_Start" style="width: 6.5em" />
+                        <span style="margin-right: 0.5em; margin-left: 0.5em;"> End: </span>
+                        <input kendo-date-picker id="KendoDatePicker_BusStat_End" k-options="Options_KendoDatePicker_BusStat_End" style="width: 9em" />
+                        <input kendo-time-picker id="KendoTimePicker_BusStat_End" k-options="Options_KendoTimePicker_BusStat_End" style="width: 6.5em" />
+                        <button kendo-button ng-click="KendoGrid_BusStat_filterMAC(KendoGrid_BusStat_MAC); Enable_Export_Excel_BusStat=false;" style="margin-left: 0.5em">Filter</button>
+                        <button kendo-button ng-click="KendoGrid_BusStat_filterClear();" style="margin-left: 0.5em">Clear</button>
+                        <!-- <a class="k-button k-button-icontext k-grid-excel k-state-disabled" href="\#" style="margin-left:2em" id="ExportExcel_BusStat"><span class="k-icon k-i-excel"></span>Export to Excel</a> -->
+                        <button kendo-button ng-click="ExportToExcel_BusStat()" style="margin-left:2em" ng-disabled="Enable_Export_Excel_BusStat"><span class="k-icon k-i-excel" style="margin:1em"></span>Export to Excel</button>
+                    </div>
+                    <div style="float: right;">
+                        <button kendo-button ng-click="Logout()" class="side-button" ng-hide="KendoTreeView_Side_show">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </script>
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            console.log("HTML Loaded");
+        });
+    </script>
+</body>
+</html>

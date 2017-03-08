@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<!-- For demo purpose only. -->
+<html>
+<head>
+    <!-- Webpage title -->
+    <title>Minimal APC Test</title>
+    <!-- CSS link section -->
+    <link rel="stylesheet" href="/stylesheets/index.css" />
+    <!-- Script section (Libraries) -->
+    <script src="/scripts/jquery-3.1.1.min.js"></script>
+    <script src="/scripts/socket.io-1.7.2.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+    <!--<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>-->
+</head>
+<body>
+    <script>
+        var WS_CLIENT_LINK = "<%= WS_CLIENT_LINK %>"; //Server rendering by ejs 
+        var UPPER_LIMIT = "<%= UPPER_LIMIT %>";
+        var RELOAD_TIME_AMOUNT = "<%= RELOAD_TIME_AMOUNT %>";
+        var WEATHER_TIME_AMOUNT = "<%= WEATHER_TIME_AMOUNT %>";
+        var SHOW_WEATHER_TAB = "<%= SHOW_WEATHER_TAB %>";
+        var SD_CARD_DOWN = "<%= SD_CARD_DOWN %>";
+    </script>
+    <script src="/scripts/index.js"></script>
+    <h1 id="Ch1In" style="display: none;"> </h1>
+    <h1 id="Ch1Out" style="display: none;"> </h1>
+    <h1 id="Ch2In" style="display: none;"> </h1>
+    <h1 id="Ch2Out" style="display: none;"> </h1>
+    <h1 id="Onboard" style="display: none;"> </h1>
+    <div id="header">
+        <div id="Status_container">
+            <img id="logo" src="/images/KMB_Logo.jpg" alt="Logo">
+            <div id="error_container">
+                <span id="sd_card_down">ERROR: SD_CARD_DOWN</span>
+            </div>
+            <div id="weather_cotainer">
+                <span id="timestamp"></span>
+                <span id="weather_temp"></span>
+                <span id="weather_humid"></span>
+                <img id="weather_icon">
+            </div>
+        </div>
+    </div>
+    <br>
+    <div id="Remaining_container_Test">
+        <img class="Title_2words" src="/images/Bus_in_48.gif" alt="Bus In: "><span class="Content_2Words" id="Bus_In">00</span>
+        <img class="Title_2words" src="/images/Bus_up_48.gif" alt="Bus Up: "><span class="Content_2Words" id="Bus_Up">00</span>
+        <br>
+        <img class="Title_2words" src="/images/Bus_out_48.gif" alt="Bus Out: "><span class="Content_2Words" id="Bus_Out">00</span>
+        <br>
+        <div id="Bottom_container">
+            <span id="Error_Report">&nbsp;</span>
+        </div>
+    </div>
+</body>
+</html>
